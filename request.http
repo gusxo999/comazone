@@ -1,0 +1,112 @@
+###
+
+GET http://localhost:3000/users/
+###
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    
+    "email":"email123@naver.com",
+    "firstName":"John",
+    "lastName":"Doe",
+    "address":"address",
+    "userPreference": {
+      "receiveEmail": true
+    }
+}
+
+
+###
+GET http://localhost:3000/users/6c3a18b0-11c5-4d97-9019-9ebe3c4d1317/saved-products
+
+
+###
+
+
+POST http://localhost:3000/users/6c3a18b0-11c5-4d97-9019-9ebe3c4d1317/saved-products
+
+{
+  "productId": "1e112c02-7c92-4d52-b76e-485e41e3f64d"
+}
+
+
+###
+PATCH http://localhost:3000/users/cm742zsvg00006js8lplkx7pl
+Content-Type: application/json
+
+{
+  "firstName":"damn2",
+  "lastName":"yes2",
+  "email":"email2@naver.com",
+  "address":"address",
+  "userPreference": {
+    "receiveEmail": false
+  }
+}
+
+###
+
+DELETE http://localhost:3000/users/2
+
+
+###
+
+GET http://localhost:3000/products?category=BEAUTY
+
+
+###
+
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+  "name": "페이셜 클렌저 클렌저 클렌저저",
+  "description": "탐스킨의 리뉴얼 페이셜 클렌저는 부드러운 거품과 깨끗한 세정력으로 피부를",
+  "category": "BEAUTY",
+  "price": 150000,
+  "stock": 200
+}
+
+
+###
+PATCH http://localhost:3000/products/1
+Content-Type: application/json
+
+{
+  "name": "페이셜",
+  "description": "탐스킨.",
+  "category": "BEAUTY",
+  "price": 150000,
+  "stock": 200
+}
+
+
+###
+
+GET http://localhost:3000/orders/7c5dd97a-b86b-4b7f-9da7-d6d9258f8d66
+
+###
+
+GET http://localhost:3000/users/70e1e61d-f2ae-4d7d-bf8f-d65eafdb6a45/orders
+
+
+###
+POST http://localhost:3000/orders
+Content-Type: application/json
+
+{
+  "userId": "70e1e61d-f2ae-4d7d-bf8f-d65eafdb6a45",
+  "orderItems": [
+    {
+      "productId": "1e112c02-7c92-4d52-b76e-485e41e3f64d",
+      "unitPrice": 59000,
+      "quantity": 1
+    },
+    {
+      "productId": "f751e63f-686d-42d4-898e-3ef6d4137908",
+      "unitPrice": 79000,
+      "quantity": 2
+    }
+  ]
+}
